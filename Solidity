@@ -1,0 +1,17 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.18;
+
+contract FavoriteNumber {
+    // 定义一个映射，存储每个人的名字和最喜欢的数字
+    mapping (string => uint256) private nameToFavoriteNumber;
+
+    // 创建或更新某人的最喜欢数字
+    function creatOrUpdateFavoritNumber(string memory name, uint256 number) public {
+        nameToFavoriteNumber[name] = number;
+    }
+
+    // 根据名字查询最喜欢的数字
+    function getNumber(string memory name) public view returns (uint256) {
+        return nameToFavoriteNumber[name];
+    }
+}
